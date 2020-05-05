@@ -1,0 +1,74 @@
+#this stores the responses that the bot utters
+
+intents:
+- greet
+- services_question
+- contact_question
+- text_summarisation
+- worked_for
+- affirm
+
+slots:
+  services:
+    type: categorical
+    values:
+        - do
+        - provide
+        - functions
+        - features
+        - solutions
+        - useful
+        - cutting edge technology
+  contact:
+    type: categorical
+    values:
+        - contact number
+        - contacted
+        - email id
+  ts:
+    type: categorical
+    values:
+        - method
+  company:
+    type: categorical
+    values:
+        - companies
+
+
+entities:
+- services
+- contact
+- ts
+- companies
+
+
+actions:
+- utter_greet
+- utter_action_help_services
+- utter_action_help_contact
+- utter_action_help_ts
+- utter_action_help_worked_for
+- utter_affirm
+- __main__.ApiAction
+
+templates:
+  utter_greet:
+  - text: "Hello, I am analytic ware's chatbot. How can i help you?"
+  utter_action_help_services:
+  - text: "At analytic ware we provide a lot of AI based cutting edge technology.
+          Some of the services we provide are
+          1)Text Summarisation
+          2)OCR
+          3)Audio Transcription
+          4)Video Transcription
+          "
+  utter_action_help_contact:
+  - text: "You can contact analytic ware at their contact number xyz
+          or drop them a mail at analyticware.ai.com."
+  utter_action_help_ts:
+  - text: "Text summarization refers to the technique of shortening long pieces of text. The intention is to create a coherent and fluent summary having only the main points outlined in the document."
+  utter_action_help_worked_for:
+  - text: "Analytic Ware has worked for numerous companies, including thapar university by helping out research scholars in carrying out research in a better and smart way!"
+
+  utter_affirm:
+  - text: "You're welcome"
